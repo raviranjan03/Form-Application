@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Demo Application</h2>
+<form>
+    First Name :
+    <input type="text" id="Fname" size="10" maxlength="10" onkeyup="fillProgress()">
+
+    Last Name :
+    <input type="text" id="Lname" size="10" maxlength="10" onkeyup="fillProgress()">
+
+    Company :
+    <input type="text" id="Company" size="10" maxlength="10" onkeyup="fillProgress()">
+
+    Role :
+    <input type="text" id="Role" size="10" maxlength="10" onkeyup="fillProgress()">
+
+    Designation :
+    <input type="text" id="Desig" size="10" maxlength="10" onkeyup="fillProgress()">
+
+    Salary :
+    <input type="text" id="Salary" size="10" maxlength="10" onkeyup="fillProgress()">
+
+    Progress Bar:
+    <progress id="PgBar" value="0" max="120"></progress>
+</form>
+
+
+<script type="text/javascript">
+    function fillProgress()
+    {
+        var result = 0;
+        var txt1 = document.getElementById("Fname").value;
+        var txt2 = document.getElementById("Lname").value;
+        var txt3 = document.getElementById("Company").value;
+        var txt4 = document.getElementById("Role").value;
+        var txt5 = document.getElementById("Desig").value;
+        var txt6 = document.getElementById("Salary").value;
+        var arr = [txt1, txt2, txt3, txt4, txt5, txt6];
+        result = calculatePercentage(arr);
+        document.getElementById("PgBar").value = result;
+    }
+    function calculatePercentage(arr)
+    {
+        var fillPrecentage = 0;
+        //if (arr[1] != "" || arr[1] != "" || c != "" || d != "" || e != "" || f != "") {
+        //var arr = [a,b,c,d,e,f]
+        for (x in arr) {
+            if (arr[x] != "")
+                fillPrecentage += 1
+        //}
+        }
+        fillPrecentage = fillPrecentage *20
+     return fillPrecentage;
+    }
+</script>
